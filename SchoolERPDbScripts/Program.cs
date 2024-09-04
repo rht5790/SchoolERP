@@ -45,7 +45,7 @@ namespace SchoolERPDbScripts
             ShowSuccess();
 
 
-            Console.WriteLine("Start executing Functions.....");
+            Console.WriteLine("Start executing db Functions.....");
             var functionExecutor = DeployChanges.To
                 .SqlDatabase(connectionString)
                 .WithScriptsEmbeddedInAssembly(assembly, (string s) =>
