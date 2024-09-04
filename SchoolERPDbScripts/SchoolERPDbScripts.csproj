@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="dbup-sqlserver" Version="5.0.41" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0" />
+  </ItemGroup>
+
+	<ItemGroup>
+		<None Remove="ActiveScripts\202408251326-IntialScript.sql"></None>
+		<None Remove="ActiveScripts\202408251426-Create New Table.sql"></None>
+	</ItemGroup>
+	<ItemGroup>
+		<EmbeddedResource Include="ActiveScripts\202408251326-IntialScript.sql"></EmbeddedResource>
+		<EmbeddedResource Include="ActiveScripts\202408251426-Create New Table.sql"></EmbeddedResource>
+	</ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Functions\" />
+    <Folder Include="Views\" />
+    <Folder Include="Triggers\" />
+    <Folder Include="Procedures\" />
+  </ItemGroup>
+
+	<ItemGroup>
+		<None Update="appsettings.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>	
+
+</Project>
